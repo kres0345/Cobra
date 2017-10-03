@@ -1,4 +1,0 @@
-@echo off
-echo Install Cobra in path?
-set /P q1=y or n: 
-md Dependencies
