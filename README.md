@@ -1,7 +1,6 @@
 # Cobra
 Cobra is a console like python or windows cmd.
 
-Work in progress.
+You can install the program by download install.bat, no need to download whole git :-D
 
-You can now install the program.
-with the install.bat file
+More feutures coming. Work in progress.
