@@ -23,6 +23,7 @@ if %selection% == doyoutrustme goto elevate
 if %selection% == packages goto packages
 if %selection% == dir goto dir
 if %selection% == start goto start
+if %selection% == checkinstalls goto checkinstalls
 echo Invalid syntax or unrecognized command.
 goto input
 
@@ -38,6 +39,9 @@ echo clear - Clears the console
 echo doyoutrustme - Ask to elevate console with admin privileges
 echo install - Install a package
 echo packages - Displays list of available packages
+echo checkinstalls - Checks if the PackagesInstalled.txt is configured correctly
+echo start - Starts installed package
+echo dir - Opens current directory in Explorer
 goto input
 
 :elevate
@@ -107,12 +111,21 @@ goto input
 
 :installpack
 echo install package
+find "%installp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
+if %errorlevel% == 1 goto installerror
 echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 @powershell Invoke-WebRequest http://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
 rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
 rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
 goto input
 
+:installerror
+echo Package already exists
+echo If this is not true then run command "checkinstalls"
+goto input
 
-
+:checkinstalls
+echo Checking if config is correct
+echo feuture coming soon
+goto input
 
