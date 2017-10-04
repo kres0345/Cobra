@@ -1,5 +1,6 @@
 @echo off
-md "C:\Users\%username%\Cobra\TextEditor"
+title Cobra - TextEditor
+md "C:\Users\%username%\Cobra\TextEditor">nul
 echo Set filename
 goto setall
 :continue

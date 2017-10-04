@@ -88,7 +88,6 @@ echo Install a package
 set /P installp=%h2%
 find "%installp%" "C:\Users\%username%\Packages.txt">nul
 if %errorlevel% == 0 goto installpack
-echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 echo Invalid name or non existent Package requested. Returning to input
 echo .
 goto input
@@ -108,7 +107,8 @@ goto input
 
 :installpack
 echo install package
-@powershell Invoke-WebRequest http://github.com/kres0345/CobraConsole/blob/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
+echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
+@powershell Invoke-WebRequest http://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
 rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
 rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
 goto input
