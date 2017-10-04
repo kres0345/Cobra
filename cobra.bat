@@ -108,8 +108,9 @@ goto input
 
 :installpack
 echo install package
-@powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
-@powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
+@powershell Invoke-WebRequest http://github.com/kres0345/CobraConsole/blob/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
+rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
+rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
 goto input
 
 
