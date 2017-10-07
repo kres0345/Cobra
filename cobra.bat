@@ -1,17 +1,21 @@
 @echo off
+echo. 2> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 md C:\Users\%username%\Cobra\Dependencies
-echo . > "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 echo Cobra 1.0 - Totally not a copy of Python :-D.
-echo opened in path: %cd% :
+echo Please report any errors you meet to the "issues" section on github
+echo Cobra opened in path: %cd% :
 echo .
 echo Type "help" for command list
 :input
 set selection=""
 set h="Cobra --> "
-set h1="cd --> "
-set h2="Package --> "
-set h3="Package->"
+set h1="cd-> "
+set h2="Package-> "
+set h3="Package-> "
+rem VVV asks user for input then sets it as %selection%. (%h% is the "echo" command. (it is defined on line 11))
 set /P selection=%h% 
+rem the if commands below, checks if input(%selection%) equals h, help or the others. If it is a valid command then the goto command,
+rem goes to the feuture in the code.
 if %selection% == h goto help
 if %selection% == help goto help
 if %selection% == console goto console
@@ -28,6 +32,7 @@ echo Invalid syntax or unrecognized command.
 goto input
 
 :help
+rem shows list of all commands integrated
 echo .
 echo ---%selection%
 echo Commands:
@@ -45,11 +50,15 @@ echo dir - Opens current directory in Explorer
 goto input
 
 :elevate
+echo .
+echo ---%selection%
 echo Will try to elevate cmd now.
+rem runas asks for password to admin user
 runas /user:%username% /savecred cobra.bat
 goto input
 
 :console
+rem the console command shows basic information about cobra.
 echo .
 echo ---%selection%
 echo Cobra 1.0 - Totally not a copy of Python :-D.
@@ -57,47 +66,101 @@ echo opened in path: %cd% :
 goto input
 
 :cd
+rem "cd" changes the current directory
 echo .
+echo ---%selection%
 echo CD: %cd%
 set /P selection1=%h1% 
 cd %selection1%
 goto input
 
 :exit
+rem displays bye message then exits with the command "cmd"
+echo .
 echo Thanks for visiting. Hope to see you again soon.
 echo .
 cmd
 
 :clear
+rem "clear" simply clears cmd output
 cls
 goto input
 
 :packages
-@powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Packages.txt"
+rem you see, this is a more advanced command it uses the "@powershell" command to access powershell commands
+rem It displays the installed packages
+echo .
+echo ---%selection%
+rem the below command downloads a status file of existing packages on my file server then displays the output with a "type" command
+@powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\Packages.txt"
 echo .
 echo The following packages is available:
-type Packages.txt
+type C:\Users\%username%\Cobra\Dependencies\Packages.txt
+echo .
+echo .
+echo The following packages is installed:
+type C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt
+echo .
 echo .
 goto input
 
 :dir
+rem Dir is a feuture I've seeked in the cmd for awhile, since I couldn't find it I created it myself
 start %cd%
 goto input
 
 
 :install
+rem Another advanced command, it downloads the package list from my server and sees, if the the package name inserted exists, if not then goes back to main input.
+rem if it exists then it proceeds to :start
 @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Packages.txt"
+if %errorlevel% == 1 echo Something went wrong couldn't install list of packages. Are you connected to the internet.
+echo .
+echo ---%selection%
 echo .
 echo Install a package
 set /P installp=%h2%
+rem VVV  sees if it can find the input in package list. Then "if %errorlevel%" checks if the "find" command was successfull
 find "%installp%" "C:\Users\%username%\Packages.txt">nul
 if %errorlevel% == 0 goto installpack
 echo Invalid name or non existent Package requested. Returning to input
 echo .
 goto input
 
+:installpack
+rem Work in progress. Some of the "rem"s below are commands that are marked as trash. But could turn out usefull. Or simply got replaced by more effective code.
+echo install package
+find "%installp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
+if %errorlevel% == 0 goto installerror
+echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
+set /p "=%installp%" <nul >>"C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
+@powershell Invoke-WebRequest http://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
+rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
+rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
+goto input
+
+:installerror
+rem this just displays an install error using the echo commands.
+echo Package already exists
+echo If this is not true then run command "checkinstalls"
+goto input
+
+:checkinstalls
+rem work in progress
+echo Checking if config is correct
+if exist C:\Users\%username%\Cobra\Dependencies\%1%.bat echo true1
+if exist C:\Users\%username%\Cobra\Dependencies\%2%.bat echo true2
+if exist C:\Users\%username%\Cobra\Dependencies\%3%.bat echo true3
+if exist C:\Users\%username%\Cobra\Dependencies\%4%.bat echo true4
+if exist C:\Users\%username%\Cobra\Dependencies\%5%.bat echo true5
+pause
+goto input
+
+
 :start
-echo Installed package
+rem starts a package. Checks if package requested is installed.
+echo Installed packages: 
+type C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt
 set /P startp=%h3%
 find "%startp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
 if %errorlevel% == 0 goto startpack
@@ -108,24 +171,4 @@ goto input
 "C:\Users\%username%\Cobra\Dependencies\%startp%"
 goto input
 
-
-:installpack
-echo install package
-find "%installp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
-if %errorlevel% == 1 goto installerror
-echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
-@powershell Invoke-WebRequest http://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
-rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
-rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
-goto input
-
-:installerror
-echo Package already exists
-echo If this is not true then run command "checkinstalls"
-goto input
-
-:checkinstalls
-echo Checking if config is correct
-echo feuture coming soon
-goto input
 
