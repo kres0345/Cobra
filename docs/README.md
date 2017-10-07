@@ -1,7 +1,6 @@
 CobraConsole is the heart of my projects.
 I created it to make navigating and operating your computer.
-{Insert image here}
-image ![alt text](https://github.com/kres0345/CobraConsole/blob/master/docs/CobraConsole.png)
+![alt text](https://github.com/kres0345/CobraConsole/blob/master/docs/CobraConsole.png)
 
 
 
