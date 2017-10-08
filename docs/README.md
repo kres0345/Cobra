@@ -12,4 +12,4 @@ You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres03
 Cobra is a brilliant project. It is made to assemble different functions into a single program.
 
 About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. 
-I created Cobra for training with PATH and because I think it's pretty cool.
+I created Cobra for training with PATH and because I think it's pretty cool. My other alias is Nett18.
