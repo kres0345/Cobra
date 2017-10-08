@@ -4,7 +4,7 @@ You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres03
 
 2nd. If you ran the "install.bat" properly then, the install directory is "C:\Users\%username%\Cobra". If you set up PATH(if you said, yes when asked) then just open cmd and type: "cobra".
 
-3rd. You report any issues you find(even typos), to the issues section [Issue section](https://github.com/kres0345/CobraConsole/issues).
+3rd. You report any issues you find(even typos), in the [Issue section](https://github.com/kres0345/CobraConsole/issues).
 
 4th. Enjoy, your stay.
 
@@ -12,4 +12,4 @@ You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres03
 Cobra is a brilliant project. It is made to assemble different functions into a single program.
 
 About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. 
-I created Cobra for training with PATH and becouse I think it's pretty cool.
+I created Cobra for training with PATH and because I think it's pretty cool. My other alias is Nett18.
