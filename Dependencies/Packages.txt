@@ -1,1 +1,1 @@
-WebsiteCopier, TextEditor, FakeUpdate, test
+WebsiteCopier, TextEditor, FakeUpdate
