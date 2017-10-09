@@ -1,6 +1,6 @@
 @echo off
 md C:\Users\%username%\Cobra\Dependencies
-echo. 2> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
+if not exist C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt echo. 2> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 echo Cobra 1.0 - Totally not a copy of Python :-D.
 echo Please report any errors you meet to the "issues" section on github
 echo Cobra opened in path: %cd% :
@@ -92,7 +92,8 @@ rem It displays the installed packages
 echo .
 echo ---%selection%
 rem the below command downloads a status file of existing packages on my file server then displays the output with a "type" command
-@powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\Packages.txt"
+rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\Packages.txt"
+@powershell Invoke-WebRequest https://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/Packages.txt -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\Packages.txt"
 echo .
 echo The following packages is available:
 type C:\Users\%username%\Cobra\Dependencies\Packages.txt
@@ -100,8 +101,9 @@ echo .
 echo .
 echo The following packages is installed:
 type C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt
-echo .
-echo .
+echo.
+echo.
+echo.
 goto input
 
 :dir
