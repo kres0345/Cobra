@@ -5,7 +5,7 @@ echo Cobra 1.0 - Totally not a copy of Python :-D.
 echo Please report any errors you meet to the "issues" section on github
 echo Cobra opened in path: %cd% :
 echo .
-echo Type "help" for command list
+echo Type "help" or "h" for command list
 :input
 set selection=""
 set h="Cobra --> "
@@ -28,7 +28,11 @@ if %selection% == packages goto packages
 if %selection% == dir goto dir
 if %selection% == start goto start
 if %selection% == checkinstalls goto checkinstalls
-echo Invalid syntax or unrecognized command.
+if %selection% == errorlog goto errorlog
+echo .
+echo ---%selection%
+echo .
+echo "%selection%" is not a valid or reconized command.
 goto input
 
 :help
@@ -47,6 +51,7 @@ echo packages - Displays list of available packages
 echo checkinstalls - Checks if the PackagesInstalled.txt is configured correctly
 echo start - Starts installed package
 echo dir - Opens current directory in Explorer
+echo errorlog - Enables errorlogging
 goto input
 
 :elevate
@@ -133,15 +138,13 @@ echo .
 goto input
 
 :installpack
-rem Work in progress. Some of the "rem"s below are commands that are marked as trash. But could turn out usefull. Or simply got replaced by more effective code.
+rem installs a package
 echo install package
 find "%installp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
 if %errorlevel% == 0 goto installerror
 echo %installp% >> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 set /p "=%installp%" <nul >>"C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 @powershell Invoke-WebRequest http://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/%installp%.bat -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.bat"
-rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages/%installp%.zip -OutFile "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip"
-rem @powershell Expand-Archive "C:\Users\$env:UserName\Cobra\Dependencies\%installp%.zip" -DestinationPath "C:\Users\$env:UserName\Cobra\Dependencies\%installp%"
 goto input
 
 :installerror
@@ -164,6 +167,8 @@ goto input
 
 :start
 rem starts a package. Checks if package requested is installed.
+echo .
+echo ---%selection%
 echo Installed packages: 
 type C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt
 echo .
@@ -178,4 +183,6 @@ goto input
 "C:\Users\%username%\Cobra\Dependencies\%startp%"
 goto input
 
-
+:errorlog
+echo This function is currently WIP
+goto input

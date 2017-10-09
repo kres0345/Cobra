@@ -12,7 +12,7 @@ set /P q2=y or n:
 if %q2% == y goto yes
 echo OK well it's up to you.
 :continue 
-@powershell Invoke-WebRequest -Uri https://raw.githubusercontent.com/kres0345/CobraConsole/master/cobra.bat -OutFile "C:\Users\%username%\Cobra\cobra.bat" >> Errorlog.log
+@powershell Invoke-WebRequest -Uri https://raw.githubusercontent.com/kres0345/CobraConsole/master/cobra.bat -OutFile "C:\Users\%username%\Cobra\cobra.bat" > Errorlog.log
 if %errorlevel% == 1 goto error
 echo Cobra is installed correctly.
 echo Cobra is located in: C:\Users\%username%\Cobra\cobra.bat
