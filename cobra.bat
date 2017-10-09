@@ -1,6 +1,6 @@
 @echo off
-echo. 2> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 md C:\Users\%username%\Cobra\Dependencies
+echo. 2> "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt"
 echo Cobra 1.0 - Totally not a copy of Python :-D.
 echo Please report any errors you meet to the "issues" section on github
 echo Cobra opened in path: %cd% :
@@ -113,7 +113,10 @@ goto input
 :install
 rem Another advanced command, it downloads the package list from my server and sees, if the the package name inserted exists, if not then goes back to main input.
 rem if it exists then it proceeds to :start
-@powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Packages.txt"
+
+rem @powershell Invoke-WebRequest http://cobrapackages.000webhostapp.com/Packages.txt -OutFile "C:\Users\$env:UserName\Packages.txt"
+
+@powershell Invoke-WebRequest https://raw.githubusercontent.com/kres0345/CobraConsole/master/Dependencies/Packages.txt -OutFile "C:\Users\$env:UserName\Packages.txt"
 if %errorlevel% == 1 echo Something went wrong couldn't install list of packages. Are you connected to the internet.
 echo .
 echo ---%selection%
@@ -161,6 +164,8 @@ goto input
 rem starts a package. Checks if package requested is installed.
 echo Installed packages: 
 type C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt
+echo .
+echo .
 set /P startp=%h3%
 find "%startp%" "C:\Users\%username%\Cobra\Dependencies\PackagesInstalled.txt">nul
 if %errorlevel% == 0 goto startpack
