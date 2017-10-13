@@ -2,7 +2,7 @@ You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres03
 
 1st. You start "install.bat".
 
-2nd. If you ran the "install.bat" properly then, the install directory is "C:\Users\%username%\Cobra". If you set up PATH(if you said, yes when asked) then just open cmd and type: "cobra".
+2nd. When you run the "install.bat" then, the install directory is "C:\Users\%username%\Cobra". If you set up PATH(if you said "y" when asked) then just open cmd and type: "cobra", as in the gif shown below.
 
 3rd. You report any issues you find(even typos), in the [Issue section](https://github.com/kres0345/CobraConsole/issues).
 
