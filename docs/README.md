@@ -8,6 +8,7 @@ You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres03
 
 4th. Enjoy, your stay.
 
+___
 
 Cobra is a brilliant project. It is made to assemble different functions into a single program.
 
