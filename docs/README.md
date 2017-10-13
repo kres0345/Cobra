@@ -17,4 +17,6 @@ I created Cobra for training with PATH and because I think it's pretty cool. My 
 
 
 Demonstration of '`Cobra version 1.0`'
-gif: https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif
+gif: 
+
+https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif
