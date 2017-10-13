@@ -10,3 +10,5 @@ check out this page for more information: https://kres0345.github.io/CobraConsol
 
 You can contact me on my twitter https://twitter.com/Kres0345 or in the issues section of this git.
 My project will be set to halt for a week or so, Some school trip
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
