@@ -1,5 +1,5 @@
 # Cobra
-Cobra is a console like python or windows cmd. Direct: 
+Cobra is a console like python or windows cmd. Direct download: 
 [install.bat](https://cdn.rawgit.com/kres0345/CobraConsole/4a17ccdc/install.bat)
 
 You can install the program by download install.bat, no need to download whole git :-D
