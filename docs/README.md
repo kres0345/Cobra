@@ -15,5 +15,5 @@ About the creator: The CobraConsole project is a project started by me(obviously
 I created Cobra for training with PATH and because I think it's pretty cool. My other alias is Nett18.
 
 
-Demonstration of 'Cobra version 1.0'
+Demonstration of '`Cobra version 1.0`'
 ![alt text](https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif "")
