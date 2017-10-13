@@ -12,4 +12,4 @@ You can contact me on my twitter https://twitter.com/Kres0345 or in the issues s
 
 Shoutout to this program: http://www.screentogif.com.
 
-![alt text](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif "Logo Title Text 1")
