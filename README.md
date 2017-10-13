@@ -9,6 +9,7 @@ More features coming. Work in progress.
 check out this page for more information: https://kres0345.github.io/CobraConsole/
 
 You can contact me on my twitter https://twitter.com/Kres0345 or in the issues section of this git.
-My project will be set to halt for a week or so, Some school trip
+
+Shoutout to this program: http://www.screentogif.com.
 
 ![alt text](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif "Logo Title Text 1")
