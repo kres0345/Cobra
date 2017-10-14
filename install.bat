@@ -1,31 +1,32 @@
 @echo off
-del Errorlog.log
+del Errorlog.log>nul
 echo Creating Cobra folder
 md "C:\Users\%username%\Cobra\Dependencies"
-echo Done creating folder
+if %errorlevel% == 0 echo Done creating folder
 echo Do you want to setup Cobra in path(it basicly means you can type "cobra" anywhere in cmd)?
 set /P q1=y or n: 
-if %q1% == y goto yes 
+if %q1% == y goto path
 echo Path not configured
-echo Last question. Do you want to set Cobra in path?.
+:afterq1
+echo.
+echo Last question. Do you wan't to autolaunch Cobra after installation. (Path needed)
 set /P q2=y or n: 
-if %q2% == y goto yes
-echo OK well it's up to you.
-:continue 
+:afterq2
 @powershell Invoke-WebRequest -Uri https://raw.githubusercontent.com/kres0345/CobraConsole/master/cobra.bat -OutFile "C:\Users\%username%\Cobra\cobra.bat" > Errorlog.log
 if %errorlevel% == 1 goto error
 echo Cobra is installed correctly.
 echo Cobra is located in: C:\Users\%username%\Cobra\cobra.bat
 if %q1% == y echo Or just type "cobra" in a cmd
-if %q2% == y echo Or just type "cobra" in a cmd
+if %q2% == y Cobra
 echo You can exit now.
 pause
 exit
 
-:yes
+:path
 set PATH=%PATH%;C:\Users\%username%\Cobra
 echo Path set.
-goto continue
+goto afterq1
+
 
 :error
 echo Something went wrong Cobra did not install successfully.
