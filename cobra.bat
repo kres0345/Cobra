@@ -27,8 +27,9 @@ if %selection% == doyoutrustme goto elevate
 if %selection% == packages goto packages
 if %selection% == dir goto dir
 if %selection% == start goto start
-if %selection% == checkinstalls goto checkinstalls
+if %selection% == checkinstall goto checkinstalls
 if %selection% == errorlog goto errorlog
+if %selection% == internet goto internet
 echo .
 echo ---%selection%
 echo .
@@ -39,19 +40,21 @@ goto input
 rem shows list of all commands integrated
 echo .
 echo ---%selection%
+echo [i] = Part of command needs internet access
 echo Commands:
 echo Help - Shows this list
-echo console - Shows console info
-echo cd - Change directory
-echo exit - Exits to cmd
-echo clear - Clears the console
+echo console      - Shows console info
+echo cd           - Change directory
+echo exit         - Exits to cmd
+echo clear        - Clears the console
 echo doyoutrustme - Ask to elevate console with admin privileges
-echo install - Install a package
-echo packages - Displays list of available packages
-echo checkinstalls - Checks if the PackagesInstalled.txt is configured correctly
-echo start - Starts installed package
-echo dir - Opens current directory in Explorer
-echo errorlog - Enables errorlogging
+echo install      - [i]Install a package
+echo packages     - [i]Displays list of available packages
+echo internet     - [i]Checks if you have internet access
+echo checkinstall - Checks if the PackagesInstalled.txt is configured correctly
+echo start        - Starts installed package
+echo dir          - Opens current directory in Explorer
+echo errorlog     - Enables errorlogging
 goto input
 
 :elevate
@@ -185,4 +188,10 @@ goto input
 
 :errorlog
 echo This function is currently WIP
+goto input
+
+:internet
+ping www.google.com -n 1 -w 2000>nul
+if %errorlevel% == 1 echo No internet connection
+if %errorlevel% == 0 echo Internet connection detected
 goto input
