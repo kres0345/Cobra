@@ -26,3 +26,9 @@ You can also just submit an idea you have for an ad-on.
 Check out this page for more information: https://kres0345.github.io/CobraConsole
 You can contact me on my twitter https://twitter.com/Kres0345 or in the issues section of this git.
 Shoutout to this program: http://www.screentogif.com.
+
+Cobra is made to assemble different functions into a single program.
+
+About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. I created Cobra for training with PATH and because I think it’s pretty cool. My other alias is Nett18.
+Demonstration of ‘Cobra version 1.0’ gif:
+https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif
