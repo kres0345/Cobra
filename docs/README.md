@@ -11,11 +11,10 @@ Cobra Dependencies is additions you can download with Cobra and run from Cobra.
 Examples on Dependencies is: TextEditor and FakeUpdate.
 
 ##### Install Dependencies
-1st. You start “install.bat”.
-
-2nd. You now goto “C:\Users\%username%\Cobra” and run cobra.bat. 
-
-3rd. Enjoy your stay. Remember to [report any issues you find](https://github.com/kres0345/CobraConsole/issues).
+1st. Start Cobra.
+2nd. Type `install`
+3rd. Type the name of the package you want.
+4th. You can get full package list by typing `packages`
 
 ##### Submit:
 You can submit a package [here](https://github.com/kres0345/CobraPackageSuggestions) if you want to.
