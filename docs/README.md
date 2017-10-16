@@ -1,4 +1,4 @@
-Shourt Link: [cobraconsole.tk](http://www.cobraconsole.tk/)
+Short Link: [cobraconsole.tk](http://www.cobraconsole.tk/)
 
 # Cobra
 Cobra is a console like python or windows cmd. You can download additions with Cobra, so it gets more functions after your taste. 
