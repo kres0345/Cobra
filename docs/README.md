@@ -30,5 +30,4 @@ Shoutout to this program: http://www.screentogif.com.
 Cobra is made to assemble different functions into a single program.
 
 About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. I created Cobra for training with PATH and because I think it’s pretty cool. My other alias is Nett18.
-Demonstration of ‘Cobra version 1.0’ gif:
-https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif
+[Demonstration of ‘Cobra version 1.0’ gif](https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif).
