@@ -1,22 +1,34 @@
-You can download CobraConsole here: [Install link](https://cdn.rawgit.com/kres0345/CobraConsole/4a17ccdc/install.bat).
+Short Link: [cobraconsole.tk](http://www.cobraconsole.tk/)
 
-1st. You start "install.bat".
+# Cobra
+Cobra is a console like python or windows cmd. You can download additions with Cobra, so it gets more functions after your taste. 
 
-2nd. When you run the "install.bat" then, the install directory is "`C:\Users\%username%\Cobra`". If you set up PATH(if you said "`y`" when asked) then just open cmd and type: "`cobra`", as in the gif shown below.
+### Installation:
+[install.bat](https://cdn.rawgit.com/kres0345/CobraConsole/4a17ccdc/install.bat)
+You can install the program by download install.bat, no need to download whole git :-D
+More features coming. Work in progress.
 
-3rd. You report any issues you find(even typos), in the [Issue section](https://github.com/kres0345/CobraConsole/issues).
+### Cobra Ad-ons/Dependencies
+Cobra Dependencies is additions you can download with Cobra and run from Cobra.
+Examples on Dependencies is: TextEditor and FakeUpdate.
 
-4th. Enjoy, your stay.
+##### Install Dependencies
+1st. Start Cobra.
+2nd. Type `install`
+3rd. Type the name of the package you want.
+4th. You can get full package list by typing `packages`
 
-___
+##### Submit:
+You can submit a package [here](https://github.com/kres0345/CobraPackageSuggestions) if you want to.
+I will modify it. So it fits Cobra (e.g. Title, Proper startup, Exit).
+You can also just submit an idea you have for an ad-on.
 
-Cobra is a brilliant project. It is made to assemble different functions into a single program.
+### Contact and information:
+Check out this page for more information: https://kres0345.github.io/CobraConsole
+You can contact me on my twitter https://twitter.com/Kres0345 or in the issues section of this git.
+Shoutout to this program: http://www.screentogif.com.
 
-About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. 
-I created Cobra for training with PATH and because I think it's pretty cool. My other alias is Nett18.
+Cobra is made to assemble different functions into a single program.
 
-
-Demonstration of '`Cobra version 1.0`'
-gif: 
-
-https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif
+About the creator: The CobraConsole project is a project started by me(obviously) I am 15 years old, and I love computers. I created Cobra for training with PATH and because I think it’s pretty cool. My other alias is Nett18.
+[Demonstration of ‘Cobra version 1.0’ gif](https://raw.githubusercontent.com/kres0345/CobraConsole/master/docs/CobraDemonstration.gif).
