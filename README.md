@@ -1,5 +1,5 @@
 # Cobra
-Cobra is a console like python or windows cmd. Direct download: 
+Cobra is a console like python or windows cmd. You can download additions with Cobra, so it gets more functions after your taste. 
 
 ### Installation:
 [install.bat](https://cdn.rawgit.com/kres0345/CobraConsole/4a17ccdc/install.bat)
@@ -8,14 +8,14 @@ More features coming. Work in progress.
 
 ### Cobra Ad-ons/Dependencies
 Cobra Dependencies is additions you can download with Cobra and run from Cobra.
-Examples on Dependencies is: 
+Examples on Dependencies is: TextEditor and FakeUpdate.
 ##### Submit:
 You can submit a package [here](https://github.com/kres0345/CobraPackageSuggestions) if you want to.
 I will modify it. So it fits Cobra (e.g. Title, Proper startup, Exit).
 You can also just submit an idea you have for an ad-on.
 
-### Contact:
-check out this page for more information: https://kres0345.github.io/CobraConsole/
+### Contact and information:
+Check out this page for more information: https://kres0345.github.io/CobraConsole
 You can contact me on my twitter https://twitter.com/Kres0345 or in the issues section of this git.
 Shoutout to this program: http://www.screentogif.com.
 
