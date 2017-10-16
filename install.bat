@@ -23,8 +23,10 @@ pause
 exit
 
 :path
+rem set PATH=%PATH%;C:\Users\%username%\Cobra
 set PATH=%PATH%;C:\Users\%username%\Cobra
-echo Path set.
+if %errorlevel% == 0 echo Path set.
+if %errorlevel% == 1 echo Path not set. Error.
 goto afterq1
 
 

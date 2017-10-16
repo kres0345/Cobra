@@ -12,6 +12,7 @@ set h="Cobra --> "
 set h1="cd-> "
 set h2="Package-> "
 set h3="Package-> "
+set h4="Host-> "
 rem VVV asks user for input then sets it as %selection%. (%h% is the "echo" command. (it is defined on line 11))
 set /P selection=%h% 
 rem the if commands below, checks if input(%selection%) equals h, help or the others. If it is a valid command then the goto command,
@@ -30,6 +31,8 @@ if %selection% == start goto start
 if %selection% == checkinstall goto checkinstalls
 if %selection% == errorlog goto errorlog
 if %selection% == internet goto internet
+if %selection% == rhostname goto resolvehost
+if %selection% == rhost goto resolvehost
 echo .
 echo ---%selection%
 echo .
@@ -55,6 +58,9 @@ echo checkinstall - Checks if the PackagesInstalled.txt is configured correctly
 echo start        - Starts installed package
 echo dir          - Opens current directory in Explorer
 echo errorlog     - Enables errorlogging
+echo rhostname    - Resolves hostname to ip
+echo rhost        - Shourcut for rhostname
+echo ----------Note: I am working on command augments
 goto input
 
 :elevate
@@ -194,4 +200,9 @@ goto input
 ping www.google.com -n 1 -w 2000>nul
 if %errorlevel% == 1 echo No internet connection
 if %errorlevel% == 0 echo Internet connection detected
+goto input
+
+:resolvehost
+set /P host=%h4%
+ping -a -n 1 -w 1 -l 69 %host% |find "Ping statistics for"
 goto input
