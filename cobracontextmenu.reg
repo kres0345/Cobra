@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmdprompt\command]
+@="C:\Users\[LOGONUSER]\Cobra\cobra.bat"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdprompt\command]
+@="C:\Users\[LOGONUSER]\Cobra\cobra.bat"
+
+[HKEY_CLASSES_ROOT\Drive\shell\cmdprompt\command]
+@="C:\Users\[LOGONUSER]\Cobra\cobra.bat"
