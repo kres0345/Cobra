@@ -1,3 +1,3 @@
 
 
-- Nice work contributing I hope.
+- Nice work contributing, I hope.
