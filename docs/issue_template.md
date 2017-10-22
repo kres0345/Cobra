@@ -9,6 +9,8 @@
 - [ ] Error in cobra.bat(or simply cobra)
 - [ ] Have you included error.log
 
+To cross out a box then type - [x]
+
 You can help me help you by filling this:
 Operating system:  (E.G: Win10)
-Systemtype:  (E.G: 64 bit)
+System type:  (E.G: 64 bit)
