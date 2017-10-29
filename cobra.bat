@@ -202,6 +202,7 @@ if %errorlevel% == 1 echo No internet connection
 if %errorlevel% == 0 echo Internet connection detected
 goto input
 
+
 :resolvehost
 set /P host=%h4%
 ping -a -n 1 -w 1 -l 69 %host% |find "Ping statistics for"
