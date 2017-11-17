@@ -33,6 +33,7 @@ if %selection% == errorlog goto errorlog
 if %selection% == internet goto internet
 if %selection% == rhostname goto resolvehost
 if %selection% == rhost goto resolvehost
+if %selection% == cdclip goto cdclip
 echo .
 echo ---%selection%
 echo .
@@ -206,4 +207,8 @@ goto input
 :resolvehost
 set /P host=%h4%
 ping -a -n 1 -w 1 -l 69 %host% |find "Ping statistics for"
+goto input
+
+:cdclip
+echo %cd% | clip
 goto input
