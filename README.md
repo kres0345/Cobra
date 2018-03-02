@@ -2,7 +2,7 @@
 Cobra is a console like python or windows cmd. You can download additions with Cobra, so it gets more functions after your taste. 
 
 ### Development progress
-I havent planned on begin working on this project anytime soon. But if you're interested then take look at https://github.com/kres0345/CMDextension
+I haven't planned on beginning working on this project again anytime soon. But if you're interested then take look at https://github.com/kres0345/CMDextension
 
 ### Installation:
 [install.bat](https://cdn.rawgit.com/kres0345/CobraConsole/4a17ccdc/install.bat)
